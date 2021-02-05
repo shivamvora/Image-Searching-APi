@@ -12,11 +12,11 @@ function App() {
     //8ih3rIf8HXDNuscbkvWx2-1Kj3VboKAoeWXVy13KlX4
 
     const fetchImages = () => {
-        fetch(`https://api.unsplash.com/search/photos?client_id=8ih3rIf8HXDNuscbkvWx2-1Kj3VboKAoeWXVy13KlX4&query=${value}`)
+        fetch(`https://api.unsplash.com/search/photos?client_id=8ih3rIf8HXDNuscbkvWx2-1Kj3VboKAoeWXVy13KlX4&query=${value} `)
         .then(res=>res.json())
         .then(data=>{
             //console.log(data);
-            setResults(data.results);
+            setResults(data.results)
         })
     }
 
@@ -30,7 +30,7 @@ function App() {
         <div className="gallery">
             {
                 results.map((item)=>{
-                    return <image src={item.urls.regular}/>
+                    return <img key={item.id} src={item.urls.regular} alt="will show"/>
                 })
             }
         </div>

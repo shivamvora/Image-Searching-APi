@@ -12,3 +12,9 @@
     box-shadow: 1px 1px 5px gray;
     padding: 10px;
 }
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
