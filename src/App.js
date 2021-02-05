@@ -10,7 +10,11 @@ function App() {
     //8ih3rIf8HXDNuscbkvWx2-1Kj3VboKAoeWXVy13KlX4
 
     const fetchImages = () => {
-        fetch("https://api.unsplash.com/search/photos?client_id=8ih3rIf8HXDNuscbkvWx2-1Kj3VboKAoeWXVy13KlX4")
+        fetch(`https://api.unsplash.com/search/photos?client_id=8ih3rIf8HXDNuscbkvWx2-1Kj3VboKAoeWXVy13KlX4&query=${value}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
     }
 
     return( 
@@ -18,7 +22,7 @@ function App() {
         <div className="mydiv">
             <span>Search</span>
             <input style={{width:"60%"}} type="text" value={value} onChange={(e) => setValue(e.target.value)} />
-            <button>Send</button>
+            <button onClick={()=>fetchImages}>Send</button>
         </div>
     </div>
     );
